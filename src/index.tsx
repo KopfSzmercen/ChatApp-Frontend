@@ -9,7 +9,7 @@ import "@fontsource/roboto/700.css";
 import { ThemeProvider } from "@mui/material/styles";
 import mainTheme from "./config/theme/mainTheme";
 
-export const BASE_API_URL = "http://localhost:8080";
+export const BASE_API_URL = "https://limitless-sands-33378.herokuapp.com";
 
 ReactDOM.render(
   <ThemeProvider theme={mainTheme}>

@@ -11,7 +11,7 @@ export const SocketProvider: React.FC<{}> = (props) => {
   const [socket, setSocket] = useState<Socket | undefined>();
 
   useEffect(() => {
-    const newSocket = io("http://localhost:8080");
+    const newSocket = io("https://limitless-sands-33378.herokuapp.com");
     setSocket(newSocket);
 
     socket?.on("error", (error) => {
