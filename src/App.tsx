@@ -17,6 +17,7 @@ function App() {
               bgcolor: "backgroundColor.main",
               width: "100vw",
               height: "100vh",
+              maxHeight: "100vh",
               overflow: "hidden"
             }}
           >

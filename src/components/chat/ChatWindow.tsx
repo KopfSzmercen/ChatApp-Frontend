@@ -80,7 +80,7 @@ const ChatWindow = () => {
   return (
     <Box
       sx={{
-        maxHeight: "98vh",
+        maxHeight: "92vh",
         width: "100%",
         padding: "20px",
         display: "flex",
