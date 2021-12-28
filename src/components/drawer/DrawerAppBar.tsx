@@ -25,7 +25,7 @@ const DrawerAppBar: React.FC<{ handleDrawerToggle: () => void }> = (props) => {
 
   return (
     <AppBar
-      position="absolute"
+      position="fixed"
       sx={{
         width: { sm: `calc(100% - ${drawerWidth}px)` },
         ml: { sm: `${drawerWidth}px` },

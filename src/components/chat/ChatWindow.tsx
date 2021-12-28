@@ -4,8 +4,8 @@ import React, { useEffect, useRef } from "react";
 import { useAppContext } from "../../contexts/AppStateProvider";
 import { Message as MessageType, useChat } from "../../contexts/ChatProvider";
 import { useSocket } from "../../contexts/SocketProvider";
-import Message from "./Message";
 import MessageForm from "./MessageForm";
+import MessagesBox from "./MessagesBox";
 
 const ChatWindow = () => {
   const { chatState, setChatState } = useChat();
@@ -15,8 +15,7 @@ const ChatWindow = () => {
   const messageText = useRef("");
   const myRef = useRef<null | HTMLDivElement>(null);
 
-  const executeScroll = () =>
-    myRef.current?.scrollIntoView({ behavior: "smooth" });
+  const executeScroll = () => myRef.current?.scrollIntoView();
 
   useEffect(() => {
     executeScroll();
@@ -149,24 +148,11 @@ const ChatWindow = () => {
             maxWidth: "800px"
           }}
         >
-          {chatState.messages.length > 0 &&
-            chatState.messages.map((message) => {
-              return (
-                <>
-                  <Message
-                    received={message.senderId.toString() !== appState.userId}
-                    key={`${message._id}${Math.random()}`}
-                    text={message.text}
-                    senderName={message.senderName}
-                    createdAt={message.createdAt}
-                  />
-                </>
-              );
-            })}
+          <MessagesBox messages={chatState.messages} userId={appState.userId} />
           {
             <div
               style={{
-                height: "20px"
+                height: "5px"
               }}
               ref={myRef}
               key={"dummy_scroll_div"}

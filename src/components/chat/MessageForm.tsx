@@ -13,7 +13,15 @@ const MessageForm: React.FC<{
     setInputText("");
   };
   return (
-    <>
+    <form
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          toggleSendMessage();
+        }
+      }}
+      style={{ display: "flex", width: "100%" }}
+    >
       <TextField
         fullWidth
         multiline
@@ -31,13 +39,18 @@ const MessageForm: React.FC<{
         }}
       />
       <Button
-        sx={{ marginLeft: "15px" }}
+        sx={{
+          marginLeft: "15px",
+          marginY: "auto",
+          height: "30px",
+          width: "25px"
+        }}
         variant="contained"
         color="secondary"
         endIcon={<Send />}
         onClick={toggleSendMessage}
       ></Button>
-    </>
+    </form>
   );
 };
 

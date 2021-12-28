@@ -19,7 +19,14 @@ const MainPage = () => {
   }, [appState.authToken, appState.userId]);
 
   return (
-    <Box sx={{ display: "flex", height: "100%" }}>
+    <Box
+      sx={{
+        display: "flex",
+        height: "100%",
+        maxHeight: "98vh",
+        overflow: "hidden"
+      }}
+    >
       <CustomDrawer />
       <ChatContextProvider>
         <ChatWindow />
