@@ -6,7 +6,6 @@ const MessagesBox: React.FC<{ messages: MessageType[]; userId: string }> = ({
   messages,
   userId
 }) => {
-  console.log(messages);
   return (
     <>
       {messages.length > 0 &&
